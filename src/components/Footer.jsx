@@ -202,7 +202,7 @@
 
 // export default Footer;
 import React, { useState } from 'react';
-import group from '../assets/group.png'
+import group from '../assets/Group.png'
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null);
 

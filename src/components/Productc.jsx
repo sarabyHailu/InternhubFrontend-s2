@@ -1,5 +1,9 @@
 import React from "react";
-
+import shoe from '../assets/shoe1.png'
+import s1 from '../assets/s1.png'
+import s2 from '../assets/s2.png'
+import s3 from '../assets/s3.png'
+import s4 from '../assets/s4.png'
 const ProductPage = () => {
   return (
     <div className="p-4 md:p-8 lg:p-12">
@@ -13,23 +17,23 @@ const ProductPage = () => {
         <div className="col-span-1">
           <div className="flex flex-col items-center">
             <img
-              src="/path/to/shoe.jpg"
+              src={shoe}
               alt="Product Main"
               className="w-full max-w-xs rounded-lg"
             />
             <div className="flex mt-4 gap-2">
               <img
-                src="/path/to/shoe-thumb1.jpg"
+                src={s1}
                 alt="Thumbnail 1"
                 className="w-16 h-16 rounded-lg border"
               />
               <img
-                src="/path/to/shoe-thumb2.jpg"
+                src={s2}
                 alt="Thumbnail 2"
                 className="w-16 h-16 rounded-lg border"
               />
               <img
-                src="/path/to/shoe-thumb3.jpg"
+                src={s3}
                 alt="Thumbnail 3"
                 className="w-16 h-16 rounded-lg border"
               />

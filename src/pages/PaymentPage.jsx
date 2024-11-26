@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import shoe from '../assets/shoe1.png'
 const PaymentPage = () => {
   const [paymentMethod, setPaymentMethod] = useState('card');
 
@@ -142,7 +142,7 @@ const PaymentPage = () => {
             <h2 className="text-lg font-semibold">Order Summary</h2>
             <div className="flex items-center">
               <img
-                src="https://via.placeholder.com/50"
+                src={shoe}
                 alt="product"
                 className="w-12 h-12 rounded-lg"
               />
