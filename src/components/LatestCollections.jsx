@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { AiFillHeart,AiOutlineHeart } from "react-icons/ai"; 
 import bag1 from '../assets/bag1.png';
+import shoe from '../assets/shoe1.png';
+import dress1 from '../assets/dress1.png';
 import { useCart } from "../CartContext.jsx"
 const LatestCollections = () => {
    const { addToCart } = useCart();
@@ -12,7 +14,7 @@ const LatestCollections = () => {
       name: "French Kiss Bag",
       brand: "ALDO",
       price: "$500",
-      image: "https://via.placeholder.com/150",
+      image: bag1,
       rating: "2k+ rating",
       stock: "In Stock",
       category: "Women",
@@ -22,7 +24,7 @@ const LatestCollections = () => {
       name: "Burberry shine",
       brand: "FENDI",
       price: "$150",
-      image: "https://via.placeholder.com/150",
+      image: shoe,
       rating: "1k+ rating",
       stock: "In Stock",
       category: "Kids",
@@ -32,7 +34,7 @@ const LatestCollections = () => {
       name: "Alvero Gown",
       brand: "DIVINE",
       price: "$300",
-      image: bag1,
+      image: dress1,
       rating: "5k+ rating",
       stock: "In Stock",
       category: "Women",
@@ -94,10 +96,10 @@ const LatestCollections = () => {
               </span>
 
               {/* Image */}
-              <img
+              <img 
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full h-48 object-contain rounded-lg"
               />
             </div>
 

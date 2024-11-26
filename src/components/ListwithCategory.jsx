@@ -1,5 +1,16 @@
 import React, { useState } from "react";
-
+import shoe1 from '../assets/heel.png';
+import bag from '../assets/bag2.png'
+import jacket from '../assets/jacket.png';
+import lingerie from '../assets/lingerie.png';
+import belt from '../assets/belt.png';
+import top from '../assets/top.png';
+import glass from '../assets/glass.png'
+import hat from '../assets/hat.png';
+import cosmo from '../assets/cosmo.png';
+import wig from '../assets/wigs 1.png'
+import dress2 from '../assets/dress2.png'
+import slipper from '../assets/slipper.png'
 const categories = [
   "Men",
   "Women",
@@ -10,18 +21,18 @@ const categories = [
 ];
 
 const collections = [
-  { id: 1, name: "Shoes", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 2, name: "Bags", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 3, name: "Jackets", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 4, name: "Lingerie", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 5, name: "Belts", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 6, name: "Street wear", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 7, name: "Sunglasses", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 8, name: "Sun wear", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 9, name: "Hats", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 10, name: "Slippers", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 11, name: "Wigs", image: "https://via.placeholder.com/150", category: "Women" },
-  { id: 12, name: "Cosmetics", image: "https://via.placeholder.com/150", category: "Women" },
+  { id: 1, name: "Shoes", image: shoe1, category: "Women" },
+  { id: 2, name: "Bags", image: bag, category: "Women" },
+  { id: 3, name: "Jackets", image: jacket, category: "Women" },
+  { id: 4, name: "Lingerie", image: lingerie, category: "Women" },
+  { id: 5, name: "Belts", image: belt, category: "Women" },
+  { id: 6, name: "Street wear", image: top, category: "Women" },
+  { id: 7, name: "Sunglasses", image: glass, category: "Women" },
+  { id: 8, name: "Sun wear", image: dress2, category: "Women" },
+  { id: 9, name: "Hats", image: hat, category: "Women" },
+  { id: 10, name: "Slippers", image: slipper, category: "Women" },
+  { id: 11, name: "Wigs", image: wig, category: "Women" },
+  { id: 12, name: "Cosmetics", image: cosmo, category: "Women" },
 ];
 
 const CategoryCollections = () => {

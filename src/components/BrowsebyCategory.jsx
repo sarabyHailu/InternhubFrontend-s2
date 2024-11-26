@@ -1,26 +1,29 @@
 import React from 'react';
-
+import casual from '../assets/casual.png';
+import yellow from '../assets/yellow.png';
+import cosmo2 from '../assets/cosmo.png';
+import gym from '../assets/gym.png'
 const CategoryBrowser = () => {
   const categories = [
     {
       name: 'Casual wear',
       description: 'Over 20 categories in stock',
-      image: '/path-to-casual-wear-image.png', // Replace with actual image path
+      image: casual, // Replace with actual image path
     },
     {
       name: 'Vintage',
       description: 'Over 31 categories in stock',
-      image: '/path-to-vintage-image.png', // Replace with actual image path
+      image: yellow, // Replace with actual image path
     },
     {
       name: 'Beauty products',
       description: 'Over 24 categories in stock',
-      image: '/path-to-beauty-products-image.png', // Replace with actual image path
+      image: cosmo2, // Replace with actual image path
     },
     {
       name: 'Gym wears',
       description: 'Over 62 categories in stock',
-      image: '/path-to-gym-wear-image.png', // Replace with actual image path
+      image: gym, // Replace with actual image path
     },
   ];
 

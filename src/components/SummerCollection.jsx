@@ -154,18 +154,18 @@ import leaf from '../assets/leaf.png'
 
 const SummerCollectionBanner = () => {
   return (
-    <div style={{ maxWidth: '1350px' }} className="relative w-full  mx-auto mb-10 bg-gray-200 border-2 rounded-2xl overflow-hidden pl-6 flex flex-col lg:flex-row items-center max-h-96">
+    <div style={{ maxWidth: '1350px' }} className="relative w-full  mx-auto mb-10 bg-gray-300 border-2 rounded-2xl overflow-hidden pl-6 flex flex-col lg:flex-row items-center max-h-96">
       {/* Text Section */}
       <div className="lg:w-1/2 text-center lg:text-left">
-        <h2 className="text-purple-600 text-2xl lg:text-3xl font-bold mb-4">
+        <h2 className="text-white opacity-100 text-2xl lg:text-3xl font-bold mb-4">
           Our Curated Summer Collection
         </h2>
-        <p className="text-gray-700 text-base lg:text-lg mb-6">
+        <p className=" text-base lg:text-lg mb-6  text-white opacity-100">
           Explore our curated summer collection featuring trending styles,
           vibrant colors, and lightweight fabrics perfect for long days and
           nights.
         </p>
-        <button className="bg-orange-500 text-white px-6 py-2 rounded-lg text-lg hover:bg-orange-600">
+        <button className="bg-orange-500 text-greyishwhite px-6 py-2 rounded-lg text-lg hover:bg-orange-600">
           Explore Now
         </button>
       </div>
