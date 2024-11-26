@@ -44,6 +44,7 @@ const CategoryCollections = () => {
             {category}
           </button>
         ))}
+       
       </div>
 
       {/* Collection Grid */}

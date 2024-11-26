@@ -5,15 +5,31 @@ import CategoryCollections from "../components/ListwithCategory";
 import SummerCollection from '../components/SummerCollection';
 import CategoryBrowser from "../components/BrowsebyCategory";
 import Footer from "../components/Footer";
-const Home = () => {
+import { useState } from 'react';
+import { CartProvider,useCart } from '../CartContext';
+const Home = () => 
+  {
+  const { addToCart, cartItems } = useCart();
+    
+    //     const [cart, setCart] = useState([]);
+      
+    //     const addToCart = (product) => {
+    //       setCart((prevCart) => [...prevCart, product]);
+    //     };
     return (
-<div>
-<Navbar />
-      <HeroSection />
-      <LatestCollections />
-      <CategoryCollections/>
-      <SummerCollection/>
-      <CategoryBrowser/>
+            <div>
+                <CartProvider>
+                <Navbar cartCount={cartItems.length} />
+                <HeroSection />
+                
+                <LatestCollections addToCart={addToCart} />
+               
+                
+                <CategoryCollections/>
+                <SummerCollection/>
+                <CategoryBrowser/>
 
-      <Footer /></div>)}
+                <Footer />
+                </CartProvider>
+                </div>)}
       export default Home;
