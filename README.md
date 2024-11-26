@@ -4,7 +4,7 @@ This project is a fully functional and responsive website based on the Gebeya Ma
 
 ## 🚀 Live Demo
 
-Check out the live demo of the website: [Gebeya Market App Live Demo](#)
+Check out the live demo of the website: 
 
 ## 📌 Features
 
