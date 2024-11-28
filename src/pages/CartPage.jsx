@@ -195,15 +195,152 @@
 // };
 
 // export default CartPage;
+// import React from "react";
+// import { FaTimes } from "react-icons/fa";
+// import Navbar from "../components/Navbar";
+// import ProductComponent from "../components/ProductDescription";
+// import Footer from "../components/Footer";
+// import { useCart } from "../CartContext";
+
+// const CartPage = () => {
+//   const { cartItems, removeFromCart, updateQuantity } = useCart();
+
+//   return (
+//     <div className="min-h-screen">
+//       <Navbar />
+//       <div className="bg-gray-100 py-8 px-4">
+//         {/* Breadcrumb */}
+//         <nav className="text-sm text-gray-500 mb-6">
+//           <a href="#" className="hover:underline">Home</a> &gt;{" "}
+//           <a href="#" className="hover:underline">Cart</a>
+//         </nav>
+
+//         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+//           {/* Product Section */}
+//           <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm">
+//             <h1 className="text-2xl font-semibold mb-4">Your Cart</h1>
+
+//             {/* Check if the cart is empty */}
+//             {cartItems.length === 0 ? (
+//               <p className="text-gray-500 text-center">Your cart is empty!</p>
+//             ) : (
+//               cartItems.map((item, index) => (
+//                 <div
+//                   key={index}
+//                   className="flex justify-between items-center mb-4 border-b pb-4"
+//                 >
+//                   {/* Product Details */}
+//                   <div className="flex items-center">
+//                     <img
+//                       src={item.image || "/placeholder-image.png"}
+//                       alt={item.name}
+//                       className="w-16 h-16 rounded-lg mr-4"
+//                     />
+//                     <div>
+//                       <h3 className="font-medium">{item.name}</h3>
+//                       <p className="text-sm text-gray-500">{item.brand}</p>
+//                       <p className="text-sm text-gray-800 font-semibold">
+//                         ${item.price}
+//                       </p>
+//                     </div>
+//                   </div>
+
+//                   {/* Quantity Controls */}
+//                   <div className="flex items-center">
+//                     <button
+//                       onClick={() =>
+//                         updateQuantity(item.id, Math.max(1, item.quantity - 1))
+//                       }
+//                       className="w-8 h-8 bg-yellow-200 text-yellow-600 rounded-full flex items-center justify-center"
+//                     >
+//                       -
+//                     </button>
+//                     <span className="mx-4">{item.quantity}</span>
+//                     <button
+//                       onClick={() =>
+//                         updateQuantity(item.id, item.quantity + 1)
+//                       }
+//                       className="w-8 h-8 bg-yellow-200 text-yellow-600 rounded-full flex items-center justify-center"
+//                     >
+//                       +
+//                     </button>
+//                     <button
+//                       onClick={() => removeFromCart(item.id)}
+//                       className="ml-4 text-red-600"
+//                     >
+//                       <FaTimes size={16} />
+//                     </button>
+//                   </div>
+//                 </div>
+//               ))
+//             )}
+//           </div>
+
+//           {/* Delivery & Returns Section */}
+//           <div className="bg-white p-6 rounded-lg shadow-sm">
+//             <h2 className="text-lg font-semibold mb-4">Delivery & Returns</h2>
+
+//             {/* Location Selector */}
+//             <div className="mb-6">
+//               <p className="text-gray-800 font-medium mb-2">Location</p>
+//               <select className="w-full border p-2 rounded-lg mb-4">
+//                 <option>Location</option>
+//               </select>
+//               <select className="w-full border p-2 rounded-lg">
+//                 <option>Sub-location</option>
+//               </select>
+//             </div>
+
+//             {/* Delivery Details */}
+//             <div className="mb-6">
+//               <h3 className="font-semibold mb-2">Delivery</h3>
+//               <p className="text-sm text-gray-600">
+//                 Estimated delivery time is 1-12 business days
+//               </p>
+//               <p className="text-sm text-gray-600 mt-2">
+//                 <strong>For Same-Day Delivery:</strong> Please place your order
+//                 before 12pm
+//               </p>
+//               <p className="text-sm text-gray-600 mt-2">
+//                 <strong>Next-Day Delivery:</strong> Orders placed after 12pm
+//                 will be delivered the next day.
+//               </p>
+//               <p className="text-sm text-gray-500 mt-2">
+//                 Note: Availability may vary by location.
+//               </p>
+//             </div>
+
+//             {/* Return Policy */}
+//             <div>
+//               <h3 className="font-semibold mb-2">Return policy</h3>
+//               <p className="text-sm text-gray-600">
+//                 Guaranteed 7-day return policy.
+//               </p>
+//               <p className="text-sm text-blue-500 mt-2 cursor-pointer">
+//                 Visit our Contact page for return options.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <ProductComponent />
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default CartPage;
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import Navbar from "../components/Navbar";
-import ProductComponent from "../components/ProductDescription";
 import Footer from "../components/Footer";
 import { useCart } from "../CartContext";
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+
+  // Calculate total price of items in the cart
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div className="min-h-screen">
@@ -216,7 +353,7 @@ const CartPage = () => {
         </nav>
 
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Product Section */}
+          {/* Cart Items Section */}
           <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm">
             <h1 className="text-2xl font-semibold mb-4">Your Cart</h1>
 
@@ -276,54 +413,43 @@ const CartPage = () => {
             )}
           </div>
 
-          {/* Delivery & Returns Section */}
+          {/* Cart Summary Section */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h2 className="text-lg font-semibold mb-4">Delivery & Returns</h2>
+            <h2 className="text-lg font-semibold mb-4">Cart Summary</h2>
 
-            {/* Location Selector */}
-            <div className="mb-6">
-              <p className="text-gray-800 font-medium mb-2">Location</p>
-              <select className="w-full border p-2 rounded-lg mb-4">
-                <option>Location</option>
-              </select>
-              <select className="w-full border p-2 rounded-lg">
-                <option>Sub-location</option>
-              </select>
+            {/* Total Price */}
+            <div className="mb-4 flex justify-between">
+              <p className="text-gray-800">Subtotal</p>
+              <p className="text-gray-800 font-semibold">${totalPrice.toFixed(2)}</p>
             </div>
 
-            {/* Delivery Details */}
+            {/* Promotional Code */}
             <div className="mb-6">
-              <h3 className="font-semibold mb-2">Delivery</h3>
-              <p className="text-sm text-gray-600">
-                Estimated delivery time is 1-12 business days
-              </p>
-              <p className="text-sm text-gray-600 mt-2">
-                <strong>For Same-Day Delivery:</strong> Please place your order
-                before 12pm
-              </p>
-              <p className="text-sm text-gray-600 mt-2">
-                <strong>Next-Day Delivery:</strong> Orders placed after 12pm
-                will be delivered the next day.
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Note: Availability may vary by location.
-              </p>
+              <input
+                type="text"
+                placeholder="Enter Promo Code"
+                className="w-full border p-2 rounded-lg"
+              />
             </div>
 
-            {/* Return Policy */}
-            <div>
-              <h3 className="font-semibold mb-2">Return policy</h3>
-              <p className="text-sm text-gray-600">
-                Guaranteed 7-day return policy.
-              </p>
-              <p className="text-sm text-blue-500 mt-2 cursor-pointer">
-                Visit our Contact page for return options.
-              </p>
+            {/* Action Buttons */}
+            <div className="flex justify-between">
+              <button
+                className="bg-gray-300 text-gray-800 py-2 px-6 rounded-lg hover:bg-gray-400"
+                onClick={() => alert("Continue shopping")}
+              >
+                Continue Shopping
+              </button>
+              <button
+                className="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-600"
+                onClick={() => alert("Proceeding to checkout")}
+              >
+                Proceed to Checkout
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <ProductComponent />
       <Footer />
     </div>
   );
